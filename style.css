@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F5F7FA;
+    color: #212121;
+  }
+  
+  nav {
+    background-color: #1E2A38;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav .logo a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h2 {
+    font-family: 'Merriweather', serif;
+    color: #1E2A38;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .btn {
+    background-color: #00BCD4;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+  
+  .profile-photo {
+    width: 200px;
+    border-radius: 8px;
+    margin-right: 2rem;
+  }
+  
+  .about-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .project {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .project img {
+    width: 150px;
+    border-radius: 6px;
+  }
+  
+  form input, form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
