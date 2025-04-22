@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arif Özalp - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #1E2A38;
+      --accent-color: #00BCD4;
+      --bg-color: #F5F7FA;
+      --text-color: #212121;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-family: 'Merriweather', serif;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #about {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    #about img {
+      width: 200px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-family: 'Merriweather', serif;
+      margin-bottom: 20px;
+    }
+
+    .project {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .project img {
+      width: 100px;
+    }
+
+    .btn {
+      background: var(--accent-color);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .contact-btns a {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="location.href='#about'">Arif Özalp - Computer Engineer</div>
+    <nav>
+      <a href="#about">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <img src="https://via.placeholder.com/200" alt="Arif Özalp">
+    <div>
+      <h2>About Me</h2>
+      <p>I am a computer engineer with a passion for software development, project management, and clean design. I aim to build solutions that are efficient and accessible.</p>
+      <ul>
+        <li>Passionate about technology</li>
+        <li>Lifelong learner</li>
+        <li>Committed to quality</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <img src="https://via.placeholder.com/100" alt="Project">
+      <div>
+        <h3>Project One</h3>
+        <p>A brief description of the project goes here.</p>
+        <a class="btn" href="#">See Details</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>Education, Experience, Skills Summary, and Certifications will be listed here in HTML format.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Certificates</h2>
+    <ul>
+      <li>Programming: Python, Java, C++</li>
+      <li>Tools: Git, Docker, VSCode</li>
+      <li>Certificates: Python (Coursera), Web Dev (Udemy)</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-btns">
+      <a class="btn" href="#">Contact Me</a>
+      <a class="btn" href="https://github.com/" target="_blank">Visit GitHub</a>
+    </div>
+  </section>
+</body>
+</html>
