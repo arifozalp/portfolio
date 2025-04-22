@@ -1,0 +1,32 @@
+<style>
+:root {
+ --primary: #1E2A38;
+--accent: #00BCD4;
+    --bg: #F5F7FA;
+    --text: #212121;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+  .navbar { position: sticky; top: 0; background: var(--primary); color: #fff; padding: 1rem; }
+  .navbar .logo { font-family: 'Merriweather', serif; font-size: 1.25rem; }
+  .navbar nav a { color: #fff; text-decoration: none; margin-left: 1rem; }
+  .hero { display: flex; align-items: center; padding: 4rem 0; }
+  .hero-img { width: 200px; border-radius: 8px; }
+  .hero-text h1 { font-family: 'Merriweather', serif; font-size: 2.5rem; margin-bottom: 1rem; }
+  .btn-accent { background: var(--accent); color: #fff; padding: .75rem 1.5rem; border: none; border-radius: 5px; text-decoration: none; font-weight: bold; }
+  .section { padding: 4rem 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+  .card { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  .card-buttons a { text-decoration: none; margin-right: 1rem; color: var(--accent); font-weight: bold; }
+  .timeline { border-left: 2px solid var(--primary); padding-left: 1rem; }
+  .timeline-item { margin-bottom: 2rem; }
+  .skill-bar { margin-bottom: 1rem; }
+  .bar { background: #ddd; border-radius: 5px; overflow: hidden; }
+  .fill { background: var(--accent); height: 1rem; }
+  .cert-list li { margin-bottom: .5rem; }
+  .contact-form input, .contact-form textarea { width: 100%; padding: .75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+  .contact-links a { text-decoration: none; margin-right: 1rem; color: var(--primary); }
+  [data-animate] { opacity: 0; transform: translateY(20px); transition: all .5s ease-in-out; }
+  [data-animate].visible { opacity: 1; transform: translateY(0); }
+  </style>
