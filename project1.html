@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Farming Management Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body class="fade">
+    <nav>
+        <div class="logo-modern">
+          <span class="logo-square"></span>
+          <div class="logo-text">
+            <strong>Arif Özalp</strong>
+            <span class="subtitle">/ COMPUTER ENGINEER</span>
+          </div>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+  <main class="project-detail yellow-box">
+    <h1>Farming Management Game</h1>
+    <img src="project1.png" alt="Farming Game Screenshot">
+    
+    <p>
+      This project is a simulation-based farming game where players manage a virtual farm by growing crops, raising animals, and making economic decisions. The game emphasizes time and resource management.
+    </p>
+
+    <h3>What I Did:</h3>
+    <ul>
+      <li>Designed core game mechanics</li>
+      <li>Implemented 2D graphics interface using SFML</li>
+      <li>Managed data persistence using XML</li>
+    </ul>
+
+    <h3>Technologies Used:</h3>
+    <p>C++, SFML, XML</p>
+    <a class="btn" href="https://github.com/OnurCokyigit/Farming-Management-Game" target="_blank">
+        View on GitHub
+      </a>
+  </main>
+
+  <footer class="minimal-footer">
+    <!-- Footer -->
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("show");
+  
+      document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+  
+        if (href && !href.startsWith("#") && !href.startsWith("mailto")) {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.body.classList.remove("show");
+  
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300); // Sayfa çıkışı süresi
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

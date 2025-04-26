@@ -4,34 +4,64 @@
   <meta charset="UTF-8">
   <title>Contact – Arif Özalp</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="fade">
   <nav>
     <div class="logo"><a href="about.html">Arif Özalp – Computer Engineer</a></div>
     <ul>
-      <li><a href="about.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li><a href="skills.html">Skills</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <section>
-    <h2>Contact</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button class="btn" type="submit">Send Message</button>
-    </form>
+  <main class="contact-section">
+    <h1>Get in Touch</h1>
+    <p class="contact-intro">
+      Feel free to reach out for collaborations, freelance projects, or simply to say hello! 👋
+    </p>
 
-    <p>Or find me on:</p>
-    <ul>
-      <li><a class="btn" href="https://github.com/yourprofile" target="_blank">Visit GitHub</a></li>
-      <li><a class="btn" href="https://linkedin.com/in/yourprofile" target="_blank">Visit LinkedIn</a></li>
-    </ul>
-  </section>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <i class="fab fa-github"></i>
+        <h3>GitHub</h3>
+        <p>Browse my code and projects</p>
+        <a href="https://github.com/arifozalp" target="_blank" class="btn">Visit GitHub</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-linkedin"></i>
+        <h3>LinkedIn</h3>
+        <p>Connect with me professionally</p>
+        <a href="https://www.linkedin.com/in/arif-%C3%B6zalp-597374326/" target="_blank" class="btn">Visit LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="contact-email">
+      <h2>Or Email Me</h2>
+      <p>
+        <a href="mailto:ozalpariff@gmail.com">ozalpariff@gmail.com</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("show");
+      document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+        if (href && !href.startsWith("#") && !href.startsWith("mailto")) {
+          link.addEventListener("click", e => {
+            e.preventDefault();
+            document.body.classList.remove("show");
+            setTimeout(() => window.location.href = href, 300);
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>

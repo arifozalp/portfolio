@@ -5,12 +5,13 @@
   <title>Resume – Arif Özalp</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="fade">
   <nav>
     <div class="logo"><a href="about.html">Arif Özalp – Computer Engineer</a></div>
     <ul>
-      <li><a href="about.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li><a href="skills.html">Skills</a></li>
@@ -18,27 +19,126 @@
     </ul>
   </nav>
 
-  <section>
-    <h2>Resume</h2>
-
-    <h3>Education</h3>
-    <p>BSc in Computer Engineering – Ankara Yıldırım Beyazıt University</p>
-
-    <h3>Work Experience</h3>
-    <p>Intern – HAVELSAN (Summer 2024)<br>Worked on simulation software testing and documentation.</p>
-
-    <h3>Skills Summary</h3>
-    <ul>
-      <li>Languages: Java, C++, Python</li>
-      <li>Tools: Git, Docker, Linux</li>
-      <li>Concepts: OOP, REST APIs, Microservices</li>
-    </ul>
-
-    <h3>Certifications</h3>
-    <ul>
-      <li>Introduction to Machine Learning – Coursera</li>
-      <li>Docker for Developers – Udemy</li>
-    </ul>
-  </section>
+  <main class="resume-section">
+    <h1><span class="resume-icon">🔷</span> Resume</h1>
+  
+    <!-- Summary -->
+    <section class="resume-block">
+      <h2>Summary</h2>
+      <div class="resume-group">
+        <div class="resume-card">
+          <div class="resume-left">
+            <strong>Profile</strong>
+          </div>
+          <div class="resume-right">
+            <p>
+              As a 3rd-year Computer Engineering student, I thrive in both collaborative and leadership roles on innovative projects. Thanks to various in- and out-of-school courses, I have hands-on experience in multiple programming languages. I’m passionate about deepening my knowledge in Simulation Systems, Operating Systems and Artificial Intelligence by closely following modern technologies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Education -->
+    <section class="resume-block">
+      <h2>Education</h2>
+      <div class="resume-group">
+        <div class="resume-card">
+          <div class="resume-left">
+            <strong>2021 – 2026</strong><br>
+            Ankara Yıldırım Beyazıt University
+          </div>
+          <div class="resume-right">
+            <strong>Computer Engineering</strong>
+            <p>GPA: 3.63 / 4.00</p>
+          </div>
+        </div>
+        <div class="resume-card">
+          <div class="resume-left">
+            <strong>2017 – 2021</strong><br>
+            Özel Batı Anadolu Lisesi
+          </div>
+          <div class="resume-right">
+            <strong>Science &amp; Math Focus</strong>
+            <p>GPA: 88.4 / 100.0</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Languages -->
+    <section class="resume-block">
+      <h2>Languages</h2>
+      <div class="resume-group">
+        <div class="resume-card">
+          <div class="resume-left">
+            <strong>English</strong>
+          </div>
+          <div class="resume-right">
+            <p>B2</p>
+          </div>
+        </div>
+        <div class="resume-card">
+          <div class="resume-left">
+            <strong>Turkish</strong>
+          </div>
+          <div class="resume-right">
+            <p>Native</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Experience -->
+    <section class="resume-block">
+      <h2>Experience</h2>
+      <div class="resume-group">
+        <div class="resume-card">
+          <div class="resume-left">
+            <strong>Feb 2024 – Jun 2024</strong><br>
+            Savunma Sanayii Akademi
+          </div>
+          <div class="resume-right">
+            <p>
+              Gained foundational knowledge of Turkish defense industry structure, systems engineering, project management, product life-cycle and quality assurance through expert-led sessions.
+            </p>
+          </div>
+        </div>
+        <div class="resume-card">
+          <div class="resume-left">
+            <strong>Sep 2024 – Dec 2024</strong><br>
+            Milli Teknoloji Akademisi
+          </div>
+          <div class="resume-right">
+            <p>
+              Advanced my AI skills—from fundamentals to advanced topics—by participating in the Artificial Intelligence Academy program.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
 </body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("show");
+
+    document.querySelectorAll("a").forEach(link => {
+      const href = link.getAttribute("href");
+
+      if (href && !href.startsWith("#") && !href.startsWith("mailto")) {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.body.classList.remove("show");
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300); // Sayfa çıkışı süresi
+        });
+      }
+    });
+  });
+</script>
 </html>

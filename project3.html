@@ -1,9 +1,13 @@
+<!-- project3.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Projects – Arif Özalp</title>
+  <title>Sector Similarity Analysis of Stocks</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body class="fade">
   <nav>
@@ -23,38 +27,26 @@
     </ul>
   </nav>
 
-  <main class="projects-section">
-    <div class="project-card">
-      <img src="project1.png" alt="Farming Game">
-      <div class="project-info">
-        <h3>Farming Management Game</h3>
-        <p class="short-desc">2D farming simulation using C++ and SFML.</p>
-        <p class="details">Manage crops, animals, and time in this XML-powered farm simulator.</p>
-        <a class="btn" href="project1.html">See Details</a>
-      </div>
-    </div>
+  <main class="project-detail yellow-box">
+    <h1>Sector Similarity Analysis of Stocks</h1>
+    <img src="project3.png" alt="Stock AI Screenshot">
 
-    <div class="project-card">
-      <img src="project2.png" alt="Course Planner">
-      <div class="project-info">
-        <h3>Course Schedule Planner</h3>
-        <p class="short-desc">Web app for generating optimal class timetables.</p>
-        <p class="details">Built with Angular and PostgreSQL, supports filtering and conflict checks.</p>
-        <a class="btn" href="project2.html">See Details</a>
-      </div>
-    </div>
+    <p>
+      An artificial intelligence project that analyzes time series behavior of stock prices across different sectors. The system identifies sectoral similarity of a stock and provides insights to support investment strategies.
+    </p>
 
-    <div class="project-card">
-      <img src="project3.png" alt="Stock Analysis AI">
-      <div class="project-info">
-        <h3>Stock Sector Similarity AI</h3>
-        <p class="short-desc">AI to classify stocks by sector behavior.</p>
-        <p class="details">Analyzes stock time series to provide sector-alike predictions using ML models.</p>
-        <a class="btn" href="project3.html">See Details</a>
-      </div>
-    </div>
-
+    <h3>What I Did:</h3>
+    <ul>
+      <li>Collected and processed financial time series data</li>
+      <li>Extracted features using tsfresh and statistical libraries</li>
+      <li>Trained and evaluated models using CatBoost and XGBoost</li>
+    </ul>
     
+    <h3>Technologies Used:</h3>
+    <p>Python, NumPy, scikit-learn, tsfresh, CatBoost, XGBoost, Matplotlib</p>
+    <a class="btn" href="https://github.com/arifozalp/stock-sector-analysis" target="_blank">
+      View on GitHub
+    </a>
   </main>
 
   <footer class="minimal-footer">
@@ -64,6 +56,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("show");
+  
       document.querySelectorAll("a").forEach(link => {
         const href = link.getAttribute("href");
   

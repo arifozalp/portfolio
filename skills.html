@@ -4,41 +4,213 @@
   <meta charset="UTF-8">
   <title>Skills & Certificates – Arif Özalp</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    /* Base modal content state for animation */
+    .modal-content {
+      background: var(--text-light);
+      border-radius: 8px;
+      max-width: 800px;
+      max-height: 90%;
+      overflow-y: auto;
+      padding: 24px;
+      position: relative;
+      text-align: center;
+      transform: scale(0.8);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    /* Active state triggers growth animation */
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .modal-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .modal-content h3 {
+      margin-top: 16px;
+      color: var(--color3);
+      font-size: 1.5rem;
+    }
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      z-index: 1001;
+    }
+  </style>
 </head>
-<body>
+<body class="fade">
   <nav>
     <div class="logo"><a href="about.html">Arif Özalp – Computer Engineer</a></div>
     <ul>
-      <li><a href="about.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="resume.html">Resume</a></li>
-      <li><a href="skills.html">Skills</a></li>
+      <li><a class="active" href="skills.html">Skills</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <section>
-    <h2>Skills & Certifications</h2>
+  <main class="skills-section">
+    <h1>Skills &amp; Certifications</h1>
 
-    <h3>Programming Languages</h3>
-    <ul>
-      <li>Java</li>
-      <li>C++</li>
-      <li>Python</li>
-    </ul>
+    <!-- Technical Skills -->
+    <section class="skills-block">
+      <h2>Technical Skills</h2>
+      <ul class="skill-list">
+        <li><i class="fab fa-python skill-icon"></i><strong> Python:</strong> NumPy, SciPy, scikit-learn, tsfresh, Matplotlib</li>
+        <li><i class="fab fa-java skill-icon"></i><strong> Java:</strong> OOP principles & core libraries</li>
+        <li><i class="fas fa-code skill-icon"></i><strong> C / C++:</strong> SFML interfaces; OS concepts (memory, processes, threads, concurrency)</li>
+        <li><i class="fas fa-robot skill-icon"></i><strong> AI & ML:</strong> Machine Learning, Deep Learning</li>
+      </ul>
+    </section>
 
-    <h3>Tools & Frameworks</h3>
-    <ul>
-      <li>Git, Docker, Linux</li>
-      <li>Spring Boot, React, MySQL</li>
-    </ul>
+    <!-- Certifications -->
+    <section class="certifications-block">
+      <h2>Certifications</h2>
+      <div class="certificates-list">
+        <div class="certificate-block">
+          <img src="/Certifications/YapayZeka.png" alt="AI Specialization Program – Basic Training Certificate">
+          <div class="certificate-text">
+            <h3>AI Specialization Program – Basic Training Certificate</h3>
+            <p>Milli Teknoloji Akademisi</p>
+          </div>
+        </div>
+        <div class="certificate-block">
+          <img src="/Certifications/SavunmaSanayii101.png" alt="Savunma Sanayii 101 Class Certificate">
+          <div class="certificate-text">
+            <h3>Savunma Sanayii 101 Class Certificate</h3>
+            <p>Savunma Sanayii Akademi</p>
+          </div>
+        </div>
+        <div class="certificate-block">
+          <img src="/Certifications/KariyerYetkinlik.png" alt="Kariyer ve Yetkinlik Buluşmaları Katılım Belgesi">
+          <div class="certificate-text">
+            <h3>Kariyer ve Yetkinlik Buluşmaları Katılım Belgesi</h3>
+            <p>Savunma Sanayii Akademi</p>
+          </div>
+        </div>
+        <div class="certificate-block">
+          <img src="/Certifications/CodeGeek.png" alt="Code Geek Certificate">
+          <div class="certificate-text">
+            <h3>Code Geek</h3>
+            <p>Globally Check</p>
+          </div>
+        </div>
+        <div class="certificate-block">
+          <img src="/Certifications/CodeMasters.png" alt="CodeMasters Certificate">
+          <div class="certificate-text">
+            <h3>CodeMasters</h3>
+            <p>Globally Check</p>
+          </div>
+        </div>
+        <div class="certificate-block">
+          <img src="/Certifications/JavaBasic.png" alt="Java Basic Certificate">
+          <div class="certificate-text">
+            <h3>Java Basic Certificate</h3>
+            <p>Hackerrank</p>
+          </div>
+        </div>
+        <div class="certificate-block">
+          <img src="/Certifications/SQLBasic.png" alt="SQL Basic Certificate">
+          <div class="certificate-text">
+            <h3>SQL Basic Certificate</h3>
+            <p>Hackerrank</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <h3>Certifications</h3>
-    <ul>
-      <li>Machine Learning – Coursera</li>
-      <li>Docker Mastery – Udemy</li>
-    </ul>
-  </section>
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <img src="" alt="" id="modalImage">
+      <h3 id="modalTitle"></h3>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("show");
+
+      document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+  
+        if (href && !href.startsWith("#") && !href.startsWith("mailto")) {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.body.classList.remove("show");
+  
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300); // Sayfa çıkışı süresi
+          });
+        }
+      });
+
+      // Modal logic for certificates
+      const modalOverlay = document.getElementById("modalOverlay");
+      const modalImage = document.getElementById("modalImage");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalClose = document.getElementById("modalClose");
+
+      document.querySelectorAll('.certificate-block').forEach(block => {
+        block.addEventListener('click', () => {
+          const img = block.querySelector('img');
+          const title = block.querySelector('h3');
+          modalImage.src = img.src;
+          modalImage.alt = img.alt;
+          modalTitle.textContent = title.textContent;
+          // Show overlay and animate
+          modalOverlay.style.display = 'flex';
+          requestAnimationFrame(() => {
+            modalOverlay.classList.add('active');
+          });
+        });
+      });
+
+      function closeModal() {
+        modalOverlay.classList.remove('active');
+        setTimeout(() => {
+          modalOverlay.style.display = 'none';
+        }, 300);
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', e => {
+        if (e.target === modalOverlay) closeModal();
+      });
+    });
+
+
+
+      
+  </script>
 </body>
 </html>
