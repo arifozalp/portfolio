@@ -1,144 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume – Arif Özalp</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Critical CSS -->
+  <style>
+    :root {
+      --primary-color: #5d3a00;
+      --secondary-color: #c09a36;
+      --bg1: #f9ecdb;
+      --bg2: #ead9bf;
+      --bg3: #d8c3a5;
+      --wave-soft: #f4e5ce;
+      --text-color: #333;
+      --white: #fff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-color);
+      display: flex; flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
+      background-size: 600% 600%;
+      animation: gradientShift 40s ease-in-out infinite both;
+      opacity: 0; transition: opacity .5s ease-in-out;
+    }
+    body.show { opacity: 1; }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .wave, .wave.wave2 {
+      position: absolute; top: 0; left: 0;
+      width: 300%; height: 100%; pointer-events: none;
+      fill: var(--wave-soft);
+      animation: waveMove 30s linear infinite both;
+    }
+    .wave.wave2 {
+      opacity: .35;
+      animation-duration: 40s;
+      transform: scaleY(-1);
+    }
+    @keyframes waveMove {
+      0% { transform: translateX(0) scaleY(1); }
+      100% { transform: translateX(-50%) scaleY(1); }
+    }
+    nav.modern-navbar { background: var(--primary-color); position: relative; z-index: 10; }
+    nav .container {
+      max-width: 1200px; margin: 0 auto; padding: 0 2em;
+      display: flex; justify-content: space-between; align-items: center;
+      height: 60px;
+    }
+    .logo-modern { display: flex; align-items: center; gap: 12px; }
+    .logo-square { width: 14px; height: 14px; background: var(--secondary-color); border-radius: 50%; }
+    .logo-text strong { font-family: 'Merriweather', serif; color: var(--white); font-size: 24px; }
+    .logo-text .subtitle { color: #ececec; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Merriweather', serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      transition: color .3s;
+      padding-bottom: 4px;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: var(--secondary-color);
+      border-bottom: 3px solid var(--secondary-color);
+    }
+    main { flex: 1; display: flex; justify-content: center; align-items: center; padding: 60px 20px; position: relative; z-index: 1; }
+    .resume-container {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+      max-width: 800px; width: 100%; margin: 0 auto;
+      padding: 40px;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: .3s;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity:1; transform: translateY(0);} }
+    .resume-container h1 {
+      font-family: 'Merriweather', serif;
+      color: var(--primary-color);
+      font-size: 32px;
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 30px;
+    }
+    .resume-block {
+      opacity: 0; transform: translateY(20px);
+      margin-bottom: 30px;
+      animation: blockFade .8s ease-out forwards;
+    }
+    .resume-block:nth-of-type(1) { animation-delay: .6s; }
+    .resume-block:nth-of-type(2) { animation-delay: .9s; }
+    .resume-block:nth-of-type(3) { animation-delay: 1.2s; }
+    .resume-block:nth-of-type(4) { animation-delay: 1.5s; }
+    @keyframes blockFade { to { opacity:1; transform: translateY(0);} }
+    .resume-block h2 {
+      font-size: 22px; color: var(--primary-color);
+      border-left: 4px solid var(--primary-color);
+      padding-left: 10px; margin-bottom: 16px;
+    }
+    .resume-group { display: flex; flex-direction: column; gap: 20px; }
+    .resume-card {
+      background: var(--bg1);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex; gap: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.1);
+      transition: transform .3s;
+    }
+    .resume-card:hover { transform: translateY(-5px); }
+    .resume-left { width: 30%; color: var(--secondary-color); font-weight: 600; }
+    .resume-right { width: 70%; }
+    .resume-right strong { color: var(--primary-color); display: block; margin-bottom: 8px; }
+    .resume-right p, .resume-right ul { margin: 0; line-height: 1.5; }
+    .resume-right ul { padding-left: 20px; }
+  </style>
 </head>
-<body class="fade">
-  <nav>
-    <div class="logo"><a href="about.html">Arif Özalp – Computer Engineer</a></div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+<body class="show">
+  <!-- Waves -->
+  <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 224L80 208C160 192 320 160 480 165.3C640 171 800 213 960 208C1120 203 1280 149 1360 122.7L1440 96V0H1360C1280 0 1120 0 960 0 800 0 640 0 480 0 320 0 160 0 80 0H0Z"/></svg>
+  <svg class="wave wave2" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 96L60 122.7C120 149 240 203 360 208C480 213 600 171 720 165.3C840 160 960 192 1080 181.3C1200 171 1320 117 1380 90.7L1440 64V320H1380C1320 320 1200 320 1080 320 960 320 840 320 720 320 600 320 480 320 360 320 240 320 120 320 60 320H0Z"/></svg>
+  <!-- Navbar -->
+  <nav class="modern-navbar">
+    <div class="container">
+      <div class="logo-modern"><span class="logo-square"></span><div class="logo-text"><strong>Arif Özalp </strong><span class="subtitle"> / COMPUTER ENGINEER</span></div></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="skills.html">Skills</a></li>
+      </ul>
+    </div>
   </nav>
-
-  <main class="resume-section">
-    <h1><span class="resume-icon">🔷</span> Resume</h1>
-  
-    <!-- Summary -->
-    <section class="resume-block">
-      <h2>Summary</h2>
-      <div class="resume-group">
-        <div class="resume-card">
-          <div class="resume-left">
-            <strong>Profile</strong>
-          </div>
-          <div class="resume-right">
-            <p>
-              As a 3rd-year Computer Engineering student, I thrive in both collaborative and leadership roles on innovative projects. Thanks to various in- and out-of-school courses, I have hands-on experience in multiple programming languages. I’m passionate about deepening my knowledge in Simulation Systems, Operating Systems and Artificial Intelligence by closely following modern technologies.
-            </p>
+  <main>
+    <div class="resume-container">
+      <h1><i class="fas fa-file-alt"></i> Resume</h1>
+      <section class="resume-block">
+        <h2>Summary</h2>
+        <div class="resume-group">
+          <div class="resume-card">
+            <div class="resume-left"><strong>Profile</strong></div>
+            <div class="resume-right"><p>As a 3rd-year Computer Engineering student, I thrive in both collaborative and leadership roles on innovative projects. Thanks to diverse coursework, I’ve developed hands-on skills in C++, Java, Python, SQL, and web technologies.</p></div>
           </div>
         </div>
-      </div>
-    </section>
-  
-    <!-- Education -->
-    <section class="resume-block">
-      <h2>Education</h2>
-      <div class="resume-group">
-        <div class="resume-card">
-          <div class="resume-left">
-            <strong>2021 – 2026</strong><br>
-            Ankara Yıldırım Beyazıt University
+      </section>
+      <section class="resume-block">
+        <h2>Education</h2>
+        <div class="resume-group">
+          <div class="resume-card">
+            <div class="resume-left"><strong>2021 – 2026</strong><br>Ankara Yıldırım Beyazıt University</div>
+            <div class="resume-right"><strong>Computer Engineering</strong><p>GPA: 3.63 / 4.00</p></div>
           </div>
-          <div class="resume-right">
-            <strong>Computer Engineering</strong>
-            <p>GPA: 3.63 / 4.00</p>
+          <div class="resume-card">
+            <div class="resume-left"><strong>2017 – 2021</strong><br>Özel Batı Anadolu Lisesi</div>
+            <div class="resume-right"><strong>Science & Math Focus</strong><p>GPA: 88.4 / 100.0</p></div>
           </div>
         </div>
-        <div class="resume-card">
-          <div class="resume-left">
-            <strong>2017 – 2021</strong><br>
-            Özel Batı Anadolu Lisesi
+      </section>
+      <section class="resume-block">
+        <h2>Languages</h2>
+        <div class="resume-group">
+          <div class="resume-card">
+            <div class="resume-left"><strong>English</strong></div>
+            <div class="resume-right"><p>B2 (Independent)</p></div>
           </div>
-          <div class="resume-right">
-            <strong>Science &amp; Math Focus</strong>
-            <p>GPA: 88.4 / 100.0</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <!-- Languages -->
-    <section class="resume-block">
-      <h2>Languages</h2>
-      <div class="resume-group">
-        <div class="resume-card">
-          <div class="resume-left">
-            <strong>English</strong>
-          </div>
-          <div class="resume-right">
-            <p>B2</p>
+          <div class="resume-card">
+            <div class="resume-left"><strong>Turkish</strong></div>
+            <div class="resume-right"><p>Native</p></div>
           </div>
         </div>
-        <div class="resume-card">
-          <div class="resume-left">
-            <strong>Turkish</strong>
+      </section>
+      <section class="resume-block">
+        <h2>Experience</h2>
+        <div class="resume-group">
+          <div class="resume-card">
+            <div class="resume-left"><strong>Feb 2024 – Jun 2024</strong><br>Savunma Sanayii Akademi</div>
+            <div class="resume-right"><p>Gained foundational knowledge of defense industry structure, systems engineering, project management, product life-cycle, and quality assurance through expert-led sessions.</p></div>
           </div>
-          <div class="resume-right">
-            <p>Native</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <!-- Experience -->
-    <section class="resume-block">
-      <h2>Experience</h2>
-      <div class="resume-group">
-        <div class="resume-card">
-          <div class="resume-left">
-            <strong>Feb 2024 – Jun 2024</strong><br>
-            Savunma Sanayii Akademi
-          </div>
-          <div class="resume-right">
-            <p>
-              Gained foundational knowledge of Turkish defense industry structure, systems engineering, project management, product life-cycle and quality assurance through expert-led sessions.
-            </p>
+          <div class="resume-card">
+            <div class="resume-left"><strong>Sep 2024 – Dec 2024</strong><br>Milli Teknoloji Akademisi</div>
+            <div class="resume-right"><p>Enhanced AI skills—from fundamentals to advanced topics—by participating in the Artificial Intelligence Academy program.</p></div>
           </div>
         </div>
-        <div class="resume-card">
-          <div class="resume-left">
-            <strong>Sep 2024 – Dec 2024</strong><br>
-            Milli Teknoloji Akademisi
-          </div>
-          <div class="resume-right">
-            <p>
-              Advanced my AI skills—from fundamentals to advanced topics—by participating in the Artificial Intelligence Academy program.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
-  
-</body>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("show");
-
-    document.querySelectorAll("a").forEach(link => {
-      const href = link.getAttribute("href");
-
-      if (href && !href.startsWith("#") && !href.startsWith("mailto")) {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          document.body.classList.remove("show");
-
-          setTimeout(() => {
-            window.location.href = href;
-          }, 300); // Sayfa çıkışı süresi
-        });
-      }
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("show");
+      document.querySelectorAll("a").forEach(link => {
+        const href = link.getAttribute("href");
+        if (href && !href.startsWith("#") && !href.startsWith("mailto")) {
+          link.addEventListener("click", e => {
+            e.preventDefault();
+            document.body.classList.remove("show");
+            setTimeout(() => window.location.href = href, 300);
+          });
+        }
+      });
     });
-  });
-</script>
+  </script>
+</body>
 </html>

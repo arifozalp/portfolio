@@ -2,72 +2,240 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arif Özalp – About Me</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arif Özalp – Home</title>
+  <style>
+    :root {
+      --primary-color: #5d3a00;
+      --secondary-color: #c09a36;
+      --bg1: #f9ecdb;
+      --bg2: #ead9bf;
+      --bg3: #d8c3a5;
+      --wave-soft: #f4e5ce;
+      --text-color: #333;
+      --white: #fff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
+      background-size: 600% 600%;
+      animation: gradientShift 10s ease-in-out infinite both;
+      transition: opacity 0.5s ease-in-out;
+      will-change: background-position;
+      position: relative;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .wave, .wave.wave2 {
+      position: absolute;
+      top: 0; left: 0;
+      width: 300%; height: 100%;
+      pointer-events: none;
+      fill: var(--wave-soft);
+      animation: waveMove 15s ease-in-out infinite both;
+      will-change: transform;
+    }
+    .wave.wave2 {
+      opacity: 0.35;
+      animation-duration: 20s;
+      transform: scaleY(-1);
+    }
+    @keyframes waveMove {
+      0% { transform: translateX(0) scaleY(1); }
+      100% { transform: translateX(-50%) scaleY(1); }
+    }
+    nav.modern-navbar {
+      background: var(--primary-color);
+      position: relative;
+      z-index: 10;
+    }
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    .logo-modern { display: flex; align-items: center; gap: 16px; }
+    .logo-square {
+      width: 16px; height: 16px;
+      background: var(--secondary-color);
+      border-radius: 50%;
+    }
+    .logo-text strong {
+      font-family: 'Merriweather', serif;
+      color: var(--white);
+      font-size: 24px;
+    }
+    .logo-text .subtitle {
+      color: #ececec;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Merriweather', serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      transition: color 0.3s;
+      padding-bottom: 4px;
+    }
+    nav ul li a:hover {
+      color: var(--secondary-color);
+    }
+    /* Active link styling with underline */
+    nav ul li a.active {
+      color: var(--secondary-color);
+      border-bottom: 3px solid var(--secondary-color);
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-section {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 60px 40px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      animation: fadeCard 1s ease forwards;
+    }
+    @keyframes fadeCard {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .round-photo {
+      width: 250px; height: 250px;
+      border-radius: 50%; object-fit: cover;
+      border: 5px solid var(--white);
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
+    }
+    .hero-text { text-align: center; }
+    .hero-text h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 48px;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .hero-text h2 {
+      font-size: 24px;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+    }
+    .hero-buttons {
+      display: flex; gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .hero-btn {
+      background: var(--secondary-color);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 12px rgba(0,0,0,.15);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .hero-btn:hover {
+      background: var(--primary-color);
+      transform: scale(1.08);
+    }
+    .social-icons {
+      display: flex; gap: 20px;
+      justify-content: center;
+    }
+    .social-icons a {
+      font-size: 28px;
+      color: var(--secondary-color);
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-icons a:hover {
+      color: var(--primary-color);
+      transform: scale(1.2);
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body class="fade">
-
-  <nav>
-    <div class="logo-modern">
-      <span class="logo-square"></span>
-      <div class="logo-text">
-        <strong>Arif Özalp</strong>
-        <span class="subtitle">/ COMPUTER ENGINEER</span>
-      </div>
+  <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 224L80 208C160 192 320 160 480 165.3C640 171 800 213 960 208C1120 203 1280 149 1360 122.7L1440 96V0H1360C1280 0 1120 0 960 0 800 0 640 0 480 0 320 0 160 0 80 0H0Z"/></svg>
+  <svg class="wave wave2" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 96L60 122.7C120 149 240 203 360 208C480 213 600 171 720 165.3C840 160 960 192 1080 181.3C1200 171 1320 117 1380 90.7L1440 64V320H1380C1320 320 1200 320 1080 320 960 320 840 320 720 320 600 320 480 320 360 320 240 320 120 320 60 320H0Z"/></svg>
+  <nav class="modern-navbar">
+    <div class="container">
+      <div class="logo-modern"><span class="logo-square"></span><div class="logo-text"><strong>Arif Özalp </strong><span class="subtitle"> / COMPUTER ENGINEER</span></div></div>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="skills.html">Skills</a></li>
+      </ul>
     </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
   </nav>
   <main>
-    <section class="about-hero">
-    <div class="about-left">
-      <img src="profile.jpg" alt="Profile Photo" class="round-photo">
-    </div>
-    <div class="about-right">
-      <h1>Hello</h1>
-      <h2>About Me</h2>
-      <p>
-        I'm Arif Özalp, a passionate Computer Engineering student with a strong background in software development, embedded systems, and user-centered design. I strive to produce clean code and continuously improve my skills. My interests include AI, simulation, and UI/UX design.
-      </p>
-    </div>
-  </section>
-  </main>
-  
-  <footer class="minimal-footer">
-    <a href="mailto:ozalpariff@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-    <a href="https://github.com/arifozalp" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/arif-%C3%B6zalp-597374326/" target="_blank"><i class="fab fa-linkedin"></i></a>
-  </footer>
-  
+    <section class="hero-section">
+      <img src="profile.jpg" alt="Profile Photo" class="round-photo" />
+      <div class="hero-text">
+        <h1>Arif Özalp</h1>
+        <h2>Computer Engineering Student</h2>
+        <div class="hero-buttons">
+          <a href="projects.html" class="hero-btn">What I Do</a>
+          <a href="resume.html" class="hero-btn">My Resume</a>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/arif-özalp-597374326/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:ozalpariff@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/arifozalp" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </section>
+    </main>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("show");
-  
-      document.querySelectorAll("a").forEach(link => {
-        const href = link.getAttribute("href");
-  
-        if (href && !href.startsWith("#") && !href.startsWith("mailto")) {
-          link.addEventListener("click", (e) => {
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('mailto')) {
+          a.addEventListener('click', e => {
             e.preventDefault();
-            document.body.classList.remove("show");
-  
-            setTimeout(() => {
-              window.location.href = href;
-            }, 300); // Sayfa çıkışı süresi
+            setTimeout(() => window.location.href = href, 300);
           });
         }
       });
     });
   </script>
-  
 </body>
 </html>
+ 

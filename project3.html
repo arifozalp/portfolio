@@ -1,73 +1,144 @@
-<!-- project3.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sector Similarity Analysis of Stocks</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sector Similarity Analysis of Stocks – Arif Özalp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #5d3a00;
+      --secondary-color: #c09a36;
+      --bg1: #f9ecdb;
+      --bg2: #ead9bf;
+      --bg3: #d8c3a5;
+      --wave-soft: #f4e5ce;
+      --text-color: #333;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
+      background-size: 600% 600%;
+      animation: gradientShift 40s ease-in-out infinite;
+      position: relative;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    body.show { opacity: 1; }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
+    .wave, .wave.wave2 {
+      position: absolute;
+      top: 0; left: 0;
+      width: 300%; height: 100%;
+      pointer-events: none;
+      fill: var(--wave-soft);
+      animation: waveMove 30s linear infinite;
+    }
+    .wave.wave2 {
+      opacity: .35;
+      animation-duration: 40s;
+      transform: scaleY(-1);
+    }
+    @keyframes waveMove { 0% { transform: translateX(0) scaleY(1); } 100% { transform: translateX(-50%) scaleY(1); } }
+
+    nav.modern-navbar {
+      background: var(--primary-color);
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+    .logo-modern { display: flex; align-items: center; gap: 12px; }
+    .logo-square { width: 14px; height: 14px; background: var(--secondary-color); border-radius: 50%; }
+    .logo-text strong { font-family: 'Merriweather', serif; color: var(--white); font-size: 20px; }
+    .logo-text .subtitle { color: #ececec; font-size: 14px; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { color: var(--white); text-decoration: none; font-weight: 500; }
+
+    main { flex: 1; padding: 60px 20px; position: relative; z-index: 1; display: flex; justify-content: center; }
+    .project-detail {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeDetail 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+    @keyframes fadeDetail { 0% { opacity:0; transform: translateY(20px);} 100% { opacity:1; transform: translateY(0);} }
+
+    .project-detail h1 { font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 20px; }
+    .project-detail img { width: 100%; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,.1); margin-bottom: 20px; }
+    .project-detail p, .project-detail ul { margin-bottom: 20px; line-height: 1.6; }
+    .project-detail ul { padding-left: 20px; }
+    .project-detail .btn {
+      background: var(--secondary-color);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 12px rgba(0,0,0,.15);
+      display: inline-block;
+      transition: transform .3s, background .3s;
+    }
+    .project-detail .btn:hover { background: var(--primary-color); transform: scale(1.08); }
+    .project-detail h3 { color: var(--primary-color); margin-bottom: 10px; }
+    .project-detail .subtitle-text { color: var(--secondary-color); margin-bottom: 10px; }
+  </style>
 </head>
-<body class="fade">
-  <nav>
-    <div class="logo-modern">
-      <span class="logo-square"></span>
-      <div class="logo-text">
-        <strong>Arif Özalp</strong>
-        <span class="subtitle">/ COMPUTER ENGINEER</span>
-      </div>
-    </div>
+<body>
+  <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 224L80 208C160 192 320 160 480 165.3C640 171 800 213 960 208C1120 203 1280 149 1360 122.7L1440 96V0H1360C1280 0 1120 0 960 0 800 0 640 0 480 0 320 0 160 0 80 0H0Z"/></svg>
+  <svg class="wave wave2" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 96L60 122.7C120 149 240 203 360 208C480 213 600 171 720 165.3C840 160 960 192 1080 181.3C1200 171 1320 117 1380 90.7L1440 64V320H1380C1320 320 1200 320 1080 320 960 320 840 320 720 320 600 320 480 320 360 320 240 320 120 320 60 320H0Z"/></svg>
+  <nav class="modern-navbar">
+    <div class="logo-modern"><span class="logo-square"></span><div class="logo-text"><strong>Arif Özalp </strong><span class="subtitle"> / COMPUTER ENGINEER</span></div></div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="resume.html">Resume</a></li>
       <li><a href="skills.html">Skills</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
-  <main class="project-detail yellow-box">
-    <h1>Sector Similarity Analysis of Stocks</h1>
-    <img src="project3.png" alt="Stock AI Screenshot">
-
-    <p>
-      An artificial intelligence project that analyzes time series behavior of stock prices across different sectors. The system identifies sectoral similarity of a stock and provides insights to support investment strategies.
-    </p>
-
-    <h3>What I Did:</h3>
-    <ul>
-      <li>Collected and processed financial time series data</li>
-      <li>Extracted features using tsfresh and statistical libraries</li>
-      <li>Trained and evaluated models using CatBoost and XGBoost</li>
-    </ul>
-    
-    <h3>Technologies Used:</h3>
-    <p>Python, NumPy, scikit-learn, tsfresh, CatBoost, XGBoost, Matplotlib</p>
-    <a class="btn" href="https://github.com/arifozalp/stock-sector-analysis" target="_blank">
-      View on GitHub
-    </a>
+  <main>
+    <div class="project-detail">
+      <h1>Sector Similarity Analysis of Stocks</h1>
+      <img src="project3.png" alt="Stock AI Screenshot" />
+      <p>An artificial intelligence project that analyzes time series behavior of stock prices across different sectors. The system identifies sectoral similarity of a stock and provides insights to support investment strategies.</p>
+      <h3>What I Did:</h3>
+      <ul>
+        <li>Collected and processed financial time series data</li>
+        <li>Extracted features using tsfresh and statistical libraries</li>
+        <li>Trained and evaluated models using CatBoost and XGBoost</li>
+      </ul>
+      <h3>Technologies Used:</h3>
+      <p class="subtitle-text">Python, NumPy, scikit-learn, tsfresh, CatBoost, XGBoost, Matplotlib</p>
+      <a class="btn" href="https://github.com/arifozalp/stock-sector-analysis" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+    </div>
   </main>
-
-  <footer class="minimal-footer">
-    <!-- Footer -->
-  </footer>
-
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("show");
-  
       document.querySelectorAll("a").forEach(link => {
         const href = link.getAttribute("href");
-  
         if (href && !href.startsWith("#") && !href.startsWith("mailto")) {
-          link.addEventListener("click", (e) => {
+          link.addEventListener("click", e => {
             e.preventDefault();
             document.body.classList.remove("show");
-  
-            setTimeout(() => {
-              window.location.href = href;
-            }, 300); // Sayfa çıkışı süresi
+            setTimeout(() => window.location.href = href, 300);
           });
         }
       });
