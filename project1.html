@@ -42,18 +42,68 @@
     }
     .wave.wave2 { opacity: .35; animation-duration: 40s; transform: scaleY(-1); }
     @keyframes waveMove { 0% { transform: translateX(0) scaleY(1); } 100% { transform: translateX(-50%) scaleY(1); } }
+
+
     nav.modern-navbar {
       background: var(--primary-color);
-      padding: 1em 2em;
-      display: flex; justify-content: space-between; align-items: center;
-      position: relative; z-index: 10;
+      position: relative;
+      z-index: 10;
     }
-    .logo-modern { display: flex; align-items: center; gap: 12px; }
-    .logo-square { width: 14px; height: 14px; background: var(--secondary-color); border-radius: 50%; }
-    .logo-text strong { font-family: 'Merriweather', serif; color: var(--white); font-size: 20px; }
-    .logo-text .subtitle { color: #ececec; font-size: 14px; }
-    nav ul { list-style: none; display: flex; gap: 20px; }
-    nav ul li a { color: var(--white); text-decoration: none; font-weight: 500; }
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    .logo-modern {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-square {
+      width: 14px;
+      height: 14px;
+      background: var(--secondary-color);
+      border-radius: 50%;
+    }
+    .logo-text strong {
+      font-family: 'Merriweather', serif;
+      color: var(--white);
+      font-size: 24px;
+    }
+    .logo-text .subtitle {
+      color: #ececec;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Merriweather', serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      transition: color 0.3s;
+      padding-bottom: 4px;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: var(--secondary-color);
+      border-bottom: 3px solid var(--secondary-color);
+    }
+
+
+
     main { flex: 1; padding: 60px 20px; position: relative; z-index: 1; display: flex; justify-content: center; }
     .project-detail {
       background: var(--white);
@@ -67,6 +117,9 @@
       animation: fadeDetail 1s ease forwards;
       animation-delay: 0.3s;
     }
+
+
+
     @keyframes fadeDetail { 0% { opacity:0; transform: translateY(20px);} 100% { opacity:1; transform: translateY(0);} }
     .project-detail h1 { font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 20px; }
     .project-detail img { width: 100%; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,.1); margin-bottom: 20px; }
@@ -88,17 +141,23 @@
     .project-detail .subtitle-text { color: var(--secondary-color); margin-bottom: 10px; }
   </style>
 </head>
-<body>
-  <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 224L80 208C160 192 320 160 480 165.3C640 171 800 213 960 208C1120 203 1280 149 1360 122.7L1440 96V0H1360C1280 0 1120 0 960 0 800 0 640 0 480 0 320 0 160 0 80 0H0Z"/></svg>
-  <svg class="wave wave2" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 96L60 122.7C120 149 240 203 360 208C480 213 600 171 720 165.3C840 160 960 192 1080 181.3C1200 171 1320 117 1380 90.7L1440 64V320H1380C1320 320 1200 320 1080 320 960 320 840 320 720 320 600 320 480 320 360 320 240 320 120 320 60 320H0Z"/></svg>
+<body class="fade">
   <nav class="modern-navbar">
-    <div class="logo-modern"><span class="logo-square"></span><div class="logo-text"><strong>Arif Özalp </strong><span class="subtitle"> / COMPUTER ENGINEER</span></div></div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="skills.html">Skills</a></li>
-    </ul>
+    <div class="container">
+      <div class="logo-modern">
+        <span class="logo-square"></span>
+        <div class="logo-text">
+          <strong>Arif Özalp</strong>
+          <span class="subtitle">/ COMPUTER ENGINEER</span>
+        </div>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="skills.html">Skills</a></li>
+      </ul>
+    </div>
   </nav>
   <main>
     <div class="project-detail">
