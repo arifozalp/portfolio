@@ -1,0 +1,84 @@
+:root {
+  --primary-color: #5d3a00;
+  --secondary-color: #c09a36;
+  --bg1: #f9ecdb;
+  --bg2: #ead9bf;
+  --bg3: #d8c3a5;
+  --wave-soft: #f4e5ce;
+  --text-color: #333;
+  --white: #fff;
+  --accent-tech: #2c5530;
+  --tech-glow: rgba(192, 154, 54, 0.3);
+  --code-bg: #1a1a1a;
+  --border-tech: #4a5568;
+}
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html, body { 
+  width: 100%; 
+  height: 100%; 
+}
+
+body {
+  font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg3) 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease-in-out infinite both;
+  transition: opacity 0.5s ease-in-out;
+  will-change: background-position;
+  position: relative;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.wave, .wave.wave2 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 300%; height: 100%;
+  pointer-events: none;
+  fill: var(--wave-soft);
+  animation: waveMove 15s ease-in-out infinite both;
+  will-change: transform;
+}
+
+.wave.wave2 {
+  opacity: 0.35;
+  animation-duration: 20s;
+  transform: scaleY(-1);
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0) scaleY(1); }
+  100% { transform: translateX(-50%) scaleY(1); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}

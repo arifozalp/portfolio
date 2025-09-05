@@ -1,0 +1,154 @@
+.project-detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: calc(100vh - 60px);
+}
+
+.project-detail {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(192, 154, 54, 0.1);
+}
+
+.project-detail h1 {
+  font-family: 'Merriweather', serif;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.project-detail img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.1);
+  margin-bottom: 20px;
+}
+
+.project-detail p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.project-detail h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+}
+
+.project-detail ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.project-detail li {
+  margin-bottom: 8px;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0 20px 0;
+}
+
+.tech-tag {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+.project-detail .btn {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.project-detail .btn i {
+  margin-right: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .project-detail-page {
+    padding: 40px 10px;
+  }
+  
+  .project-detail {
+    padding: 30px 20px;
+  }
+  
+  .project-detail h1 {
+    font-size: 28px;
+  }
+  
+  .project-detail p {
+    font-size: 15px;
+  }
+  
+  .project-detail h3 {
+    font-size: 18px;
+  }
+  
+  .technologies {
+    gap: 6px;
+  }
+  
+  .tech-tag {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  .project-detail .btn {
+    margin-right: 10px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-detail {
+    padding: 20px 15px;
+  }
+  
+  .project-detail h1 {
+    font-size: 24px;
+  }
+  
+  .project-detail p {
+    font-size: 14px;
+  }
+  
+  .project-detail h3 {
+    font-size: 16px;
+  }
+  
+  .tech-tag {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+  
+  .project-detail .btn {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}

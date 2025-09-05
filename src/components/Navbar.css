@@ -1,0 +1,127 @@
+.modern-navbar {
+  background: var(--primary-color);
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid rgba(192, 154, 54, 0.2);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.modern-navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo-modern {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.logo-square {
+  width: 16px;
+  height: 16px;
+  background: var(--secondary-color);
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.logo-modern:hover .logo-square {
+  transform: scale(1.1);
+}
+
+.logo-text strong {
+  font-family: 'Merriweather', serif;
+  color: var(--white);
+  font-size: 24px;
+}
+
+.logo-text .subtitle {
+  color: #ececec;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.nav-links li a:hover {
+  color: var(--secondary-color);
+}
+
+.nav-links li a.active {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 6px;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .modern-navbar .container {
+    padding: 0 1em;
+  }
+  
+  .logo-text strong {
+    font-size: 20px;
+  }
+  
+  .logo-text .subtitle {
+    font-size: 14px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .logo-text strong {
+    font-size: 18px;
+  }
+  
+  .logo-text .subtitle {
+    font-size: 12px;
+  }
+}
