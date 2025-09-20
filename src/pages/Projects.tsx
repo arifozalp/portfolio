@@ -15,9 +15,9 @@ const Projects = () => {
       id: '2',
       title: 'Course Schedule Planner',
       shortDesc: 'Web app for generating optimal class timetables.',
-      details: 'Built with Angular and PostgreSQL, supports filtering and conflict checks.',
+      details: 'Built with Angular, supports filtering and conflict checks.',
       image: 'project2.png',
-      technologies: ['Angular', 'PostgreSQL', 'TypeScript']
+      technologies: ['Angular', 'TypeScript']
     },
     {
       id: '3',
