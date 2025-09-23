@@ -20,7 +20,16 @@ const Resume = () => {
               <div className="resume-card">
                 <div className="resume-left"><strong>Profile</strong></div>
                 <div className="resume-right">
-                  <p>As a 3rd-year Computer Engineering student, I thrive in both collaborative and leadership roles on innovative projects. Thanks to diverse coursework, I've developed hands-on skills in C++, Java, Python, SQL, and web technologies.</p>
+                  <p>
+                    Bilgisayar Mühendisliği 4. sınıf öğrencisi olarak, yazılım geliştirme alanında
+                    full‑stack teknolojilere odaklanıyor; hem frontend hem de backend tarafında yetkin
+                    bir mühendis olmayı hedefliyorum. Ölçeklenebilir ve kullanıcı dostu çözümler
+                    geliştirmeye odaklanıyorum. Ekip çalışmasına uyum sağlayabilen ve gerektiğinde
+                    liderlik rolü üstlenebilen, yenilikçi projelerde yer almaktan ve kendimi sürekli
+                    geliştirmekten keyif alan biriyim. Okul içi ve dışındaki çeşitli kurslar sayesinde
+                    pek çok programlama dilinde deneyim kazandım ve bu deneyimleri profesyonel
+                    projelere yansıtmayı amaçlıyorum.
+                  </p>
                 </div>
               </div>
             </div>
