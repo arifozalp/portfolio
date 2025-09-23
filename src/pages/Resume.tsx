@@ -96,6 +96,22 @@ const Resume = () => {
                   </p>
                 </div>
               </div>
+              <div className="resume-card">
+                <div className="resume-left">
+                  <strong>Aug 2025 – Sep 2025</strong><br/>HAVELSAN – Test Automation Software Intern
+                </div>
+                <div className="resume-right">
+                  <strong>Key Contributions</strong>
+                  <ul>
+                    <li>Actively contributed to Python API development for FastDDS (Fast Data Distribution Service).</li>
+                    <li>Built a cross‑platform library by bridging C++ and Python using pybind11.</li>
+                    <li>Designed and integrated publisher/subscriber modules for DDS‑based communication systems.</li>
+                    <li>Developed modern web UI with React/TypeScript: QoS management, IDL generator, message monitoring.</li>
+                    <li>Implemented C++ backend services: WebSocket server, QoS management, and network monitoring.</li>
+                    <li>Optimized build and packaging with CMake automation and Electron desktop application bundling.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </section>
         </div>
