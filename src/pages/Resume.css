@@ -14,7 +14,7 @@
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 36px 36px 48px 36px;
   border: 1px solid rgba(192, 154, 54, 0.1);
 }
 
@@ -76,14 +76,14 @@
 }
 
 .resume-left {
-  width: 30%;
+  width: 32%;
   color: var(--secondary-color);
   font-weight: 600;
   flex-shrink: 0;
 }
 
 .resume-right {
-  width: 70%;
+  width: 68%;
 }
 
 .resume-right strong {
@@ -96,6 +96,11 @@
 .resume-right p {
   margin: 0;
   line-height: 1.5;
+}
+
+.resume-right ul {
+  margin: 0;
+  padding-left: 18px;
 }
 
 .resume-right ul {
