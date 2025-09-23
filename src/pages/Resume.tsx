@@ -20,7 +20,7 @@ const Resume = () => {
               <div className="resume-card">
                 <div className="resume-left"><strong>Profile</strong></div>
                 <div className="resume-right">
-                  <p>As a 3rd-year Computer Engineering student, I thrive in both collaborative and leadership roles on innovative projects. Thanks to diverse coursework, I've developed hands-on skills in C++, Java, Python, SQL, and web technologies.</p>
+                  <p>As a 4th-year Computer Engineering student, I aim to become a proficient full-stack developer, focusing on both front-end and back-end technologies. I'm dedicated to developing scalable and user-friendly solutions. I thrive in collaborative team environments, demonstrating leadership skills when needed. I enjoy participating in innovative projects and am committed to continuous self-improvement. Through various university and external courses, I have gained hands-on experience in multiple programming languages, and I am eager to apply this knowledge to professional projects.</p>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@ const Resume = () => {
               </div>
               <div className="resume-card">
                 <div className="resume-left">
-                  <strong>Sep 2024 – Dec 2024</strong><br/>Milli Teknoloji Akademisi
+                  <strong>Sep 2024 – May 2025</strong><br/>Milli Teknoloji Akademisi
                 </div>
                 <div className="resume-right">
                   <p>Enhanced AI skills—from fundamentals to advanced topics—by participating in the Artificial Intelligence Academy program.</p>
@@ -93,6 +93,21 @@ const Resume = () => {
                     Developed backend and frontend modules using Java, DDS, and Java Swing.<br/>
                     Designed and integrated a dynamic subscriber module using reflection and generics.<br/>
                     Participated in system integration, module testing, and technical presentations.
+                  </p>
+                </div>
+              </div>
+              <div className="resume-card">
+                <div className="resume-left">
+                  <strong>Aug 2025 - Sep 2025</strong><br/>HAVELSAN – Test Automation Software Intern
+                </div>
+                <div className="resume-right">
+                  <p>
+                    Developed a Python API for a FastDDS (Fast Data Distribution Service) project.<br/>
+                    Created a cross-platform library acting as a bridge between C++ and Python using pybind11.<br/>
+                    Designed and integrated publisher/subscriber modules for DDS-based communication systems.<br/>
+                    Built a modern web interface using React/TypeScript, creating modules for QoS management, an IDL generator, and message monitoring.<br/>
+                    Developed a WebSocket server, QoS management, and network monitoring services on the C++ backend.<br/>
+                    Optimized automatic build processes with CMake and packaging for Electron-based desktop applications.
                   </p>
                 </div>
               </div>
