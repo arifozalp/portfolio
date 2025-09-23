@@ -7,8 +7,6 @@ import codeMastersImage from '../assets/CodeMasters.png'
 import javaBasicImage from '../assets/JavaBasic.png'
 import sqlBasicImage from '../assets/SQLBasic.png'
 import aYetenekImage from '../assets/aYetenek3Sertification.png'
-import yapayZekaUzmanlikImage from '../assets/Yapay Zeka Uzmanlık Programı.png'
-import havelsanSertifikaImage from '../assets/Havelsan Sertifika.png'
 import './Skills.css'
 
 const Skills = () => {
@@ -54,16 +52,6 @@ const Skills = () => {
       title: 'a Yetenek 3 Online Program',
       organization: 'ASELSAN',
       image: aYetenekImage
-    },
-    {
-      title: 'Yapay Zeka Uzmanlık Programı',
-      organization: 'Milli Teknoloji Akademisi',
-      image: yapayZekaUzmanlikImage
-    },
-    {
-      title: 'Havelsan Katılım Belgesi',
-      organization: 'HAVELSAN Akademi',
-      image: havelsanSertifikaImage
     }
   ]
 

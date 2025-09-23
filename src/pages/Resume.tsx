@@ -20,13 +20,7 @@ const Resume = () => {
               <div className="resume-card">
                 <div className="resume-left"><strong>Profile</strong></div>
                 <div className="resume-right">
-                  <p>
-                    Computer Engineering student (senior) with hands-on experience in full‑stack
-                    development. I focus on building scalable, user-friendly applications and enjoy
-                    working across frontend and backend layers. I collaborate well in teams, take
-                    initiative when needed, and continuously learn through courses and practical
-                    projects to apply new technologies in real-world settings.
-                  </p>
+                  <p>As a 3rd-year Computer Engineering student, I thrive in both collaborative and leadership roles on innovative projects. Thanks to diverse coursework, I've developed hands-on skills in C++, Java, Python, SQL, and web technologies.</p>
                 </div>
               </div>
             </div>
@@ -100,41 +94,6 @@ const Resume = () => {
                     Designed and integrated a dynamic subscriber module using reflection and generics.<br/>
                     Participated in system integration, module testing, and technical presentations.
                   </p>
-                </div>
-              </div>
-              <div className="resume-card">
-                <div className="resume-left">
-                  <strong>Aug 2025 – Sep 2025</strong><br/>HAVELSAN – Test Automation Software Intern
-                </div>
-                <div className="resume-right">
-                  <strong>Key Contributions</strong>
-                  <ul>
-                    <li>Actively contributed to Python API development for FastDDS (Fast Data Distribution Service).</li>
-                    <li>Built a cross‑platform library by bridging C++ and Python using pybind11.</li>
-                    <li>Designed and integrated publisher/subscriber modules for DDS‑based communication systems.</li>
-                    <li>Developed modern web UI with React/TypeScript: QoS management, IDL generator, message monitoring.</li>
-                    <li>Implemented C++ backend services: WebSocket server, QoS management, and network monitoring.</li>
-                    <li>Optimized build and packaging with CMake automation and Electron desktop application bundling.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="resume-block">
-            <h2>Certifications</h2>
-            <div className="resume-group">
-              <div className="resume-card">
-                <div className="resume-left"><strong>Selected</strong></div>
-                <div className="resume-right">
-                  <ul>
-                    <li>AI Specialization Program — Milli Teknoloji Akademisi</li>
-                    <li>Savunma Sanayii 101 — Savunma Sanayii Akademi</li>
-                    <li>a Yetenek 3 Online Program — ASELSAN</li>
-                    <li>Havelsan Participation Certificate — HAVELSAN Akademi</li>
-                    <li>Java Basic, SQL Basic — HackerRank</li>
-                    <li>CodeGeek / CodeMasters competitive certificates</li>
-                  </ul>
                 </div>
               </div>
             </div>
